@@ -442,9 +442,10 @@
             return;
         }
 
-        medboxClient = mqtt.connect(
-            `wss://${MQTT_HOST}:${MQTT_PORT}/mqtt`, // الاتصال الآمن wss عبر بورت 8084
-            {
+
+medboxclient = mqtt.connect(
+    'wss://c4d21d1f.ala.eu-central-1.emqxskl.com:8084/mqtt',
+ {
                 username: MQTT_USER,
                 password: MQTT_PASSWORD,
                 clientId: "medbox_web_" + Math.random().toString(16).slice(2),
