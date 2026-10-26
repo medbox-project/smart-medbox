@@ -610,12 +610,6 @@
         playMechanicalSound();
         const payload = { id, name, dose, time, timestamp: Date.now() };
         localStorage.setItem(`med_real_${id}`, JSON.stringify(payload));
-        fetch(`http://192.168.1.54/api/set?slot=${id}&name=${encodeURIComponent(name)}&dose=${encodeURIComponent(dose)}&time=${encodeURIComponent(time)}`)
-  .then(r => r.json())
-  .then(data => {
-    if (!data.ok) alert("فشل إرسال الدواء");
-  })
-  .catch(() => alert("تعذر الاتصال بالبوكس"));
 
         document.getElementById(`badge-${id}`).style.display = 'block';
         refreshChassis();
