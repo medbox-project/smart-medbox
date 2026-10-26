@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Tajawal:wght@500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --chassis-body: #181d28;
@@ -44,7 +45,6 @@
             gap: 28px;
         }
 
-        /* شريط التحكم العلوي */
         .system-bar {
             background: rgba(18, 24, 38, 0.7);
             backdrop-filter: blur(20px);
@@ -104,9 +104,10 @@
             transition: all 0.2s;
         }
 
-        .lang-btn:hover { background: #334155; }
+        .lang-btn:hover {
+            background: #334155;
+        }
 
-        /* مسرح المحاكاة ثلاثية الأبعاد للعلبة الحقيقية */
         .viewport-3d {
             perspective: 1400px;
             display: flex;
@@ -125,7 +126,7 @@
             gap: 16px;
             transform-style: preserve-3d;
             transform: rotateX(20deg) scale(0.98);
-            box-shadow: 
+            box-shadow:
                 0 40px 80px -15px rgba(0, 0, 0, 0.95),
                 0 15px 30px rgba(0, 0, 0, 0.8),
                 inset 0 2px 4px rgba(255, 255, 255, 0.2),
@@ -134,28 +135,32 @@
         }
 
         @media (max-width: 990px) {
-            .device-chassis { grid-template-columns: repeat(3, 1fr); transform: rotateX(10deg); }
+            .device-chassis {
+                grid-template-columns: repeat(3, 1fr);
+                transform: rotateX(10deg);
+            }
         }
 
         @media (max-width: 600px) {
-            .device-chassis { grid-template-columns: repeat(2, 1fr); transform: none; }
+            .device-chassis {
+                grid-template-columns: repeat(2, 1fr);
+                transform: none;
+            }
         }
 
-        /* تجويف الخانة الواحدة (Cavity Depth) */
         .device-slot {
             background: var(--chassis-cavity);
             height: 200px;
             border-radius: 14px;
             position: relative;
             overflow: hidden;
-            box-shadow: 
+            box-shadow:
                 inset 0 14px 28px rgba(0, 0, 0, 0.95),
                 inset 0 -2px 6px rgba(255, 255, 255, 0.05),
                 0 2px 5px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(0, 0, 0, 0.8);
         }
 
-        /* المحتوى الداخلي للخانة (حبة الدواء المجسمة) */
         .slot-inner-bed {
             position: absolute;
             inset: 0;
@@ -167,13 +172,12 @@
             z-index: 1;
         }
 
-        /* رسم حبة الدواء ثلاثية الأبعاد بـ CSS خالص */
         .realistic-pill {
             width: 24px;
             height: 52px;
             border-radius: 12px;
             background: linear-gradient(to right, #e2e8f0 50%, #0284c7 50%);
-            box-shadow: 
+            box-shadow:
                 inset 2px 2px 4px rgba(255, 255, 255, 0.6),
                 inset -2px -2px 4px rgba(0, 0, 0, 0.5),
                 0 8px 16px rgba(0, 0, 0, 0.7);
@@ -202,7 +206,6 @@
             text-overflow: ellipsis;
         }
 
-        /* الباب الميكانيكي الانزلاقي الواقعي (Realistic Motorized Lid) */
         .mechanical-lid {
             position: absolute;
             inset: 0;
@@ -215,13 +218,12 @@
             flex-direction: column;
             justify-content: space-between;
             padding: 14px 12px;
-            box-shadow: 
+            box-shadow:
                 0 14px 20px rgba(0, 0, 0, 0.8),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
             transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* خطوط التمسك الميكانيكية للباب (Grip Grooves) */
         .lid-grip-ribs {
             display: flex;
             flex-direction: column;
@@ -265,13 +267,11 @@
             color: #64748b;
         }
 
-        /* حركة فتح السيرفو: الباب ينزلق في المسار ويكشف الحبة */
         .device-slot.open-lid .mechanical-lid {
             transform: translateY(-82%);
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.95);
         }
 
-        /* مصفوفة الكروت والتحكم */
         .controls-matrix {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -279,11 +279,15 @@
         }
 
         @media (max-width: 900px) {
-            .controls-matrix { grid-template-columns: repeat(2, 1fr); }
+            .controls-matrix {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 600px) {
-            .controls-matrix { grid-template-columns: 1fr; }
+            .controls-matrix {
+                grid-template-columns: 1fr;
+            }
         }
 
         .slot-card {
@@ -368,7 +372,9 @@
             transition: background 0.2s;
         }
 
-        .btn-commit:hover { background: #0369a1; }
+        .btn-commit:hover {
+            background: #0369a1;
+        }
 
         .btn-test {
             background: #1e293b;
@@ -382,7 +388,9 @@
             transition: all 0.2s;
         }
 
-        .btn-test:hover { background: #334155; }
+        .btn-test:hover {
+            background: #334155;
+        }
 
         .status-badge {
             font-size: 10px;
@@ -392,10 +400,9 @@
         }
     </style>
 </head>
-<body>
 
+<body>
 <div class="main-shell">
-    
     <header class="system-bar">
         <h1 id="txtTitle">البوكس الذكي للأدوية</h1>
         <div class="bar-tools">
@@ -407,17 +414,66 @@
         </div>
     </header>
 
-    <!-- مجسم العلبة الواقعي 3D -->
     <section class="viewport-3d">
         <div class="device-chassis" id="deviceChassis"></div>
     </section>
 
-    <!-- لوحة ضبط الجرعات -->
     <main class="controls-matrix" id="controlsContainer"></main>
-
 </div>
 
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
 <script>
+    const MQTT_HOST = "c4d21d1f.ala.eu-central-1.emqxskl.com";
+    const MQTT_PORT = 8084; // البورت الآمن الظاهر في لوحة EMQX
+    const MQTT_USER = "box";
+
+    // كلمة المرور الخاصة بك
+    const MQTT_PASSWORD = "box.12345678";
+
+    const MQTT_TOPIC = "medbox/commands";
+
+    let medboxClient = null;
+    let mqttConnected = false;
+
+    function connectMedBox() {
+        if (typeof mqtt === "undefined") {
+            console.error("MQTT library did not load.");
+            return;
+        }
+
+        medboxClient = mqtt.connect(
+            `wss://${MQTT_HOST}:${MQTT_PORT}/mqtt`, // الاتصال الآمن wss عبر بورت 8084
+            {
+                username: MQTT_USER,
+                password: MQTT_PASSWORD,
+                clientId: "medbox_web_" + Math.random().toString(16).slice(2),
+                reconnectPeriod: 3000,
+                connectTimeout: 10000,
+                clean: true
+            }
+        );
+
+        medboxClient.on("connect", () => {
+            mqttConnected = true;
+            console.log("Connected to MQTT broker.");
+        });
+
+        medboxClient.on("reconnect", () => {
+            mqttConnected = false;
+            console.log("Reconnecting to MQTT...");
+        });
+
+        medboxClient.on("close", () => {
+            mqttConnected = false;
+        });
+
+        medboxClient.on("error", (error) => {
+            mqttConnected = false;
+            console.error("MQTT connection error:", error);
+        });
+    }
+
     const i18n = {
         ar: {
             title: "البوكس الذكي للأدوية",
@@ -458,53 +514,62 @@
 
     function playMechanicalSound() {
         try {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
             const now = audioCtx.currentTime;
-            
-            // صوت تروس المحرك
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
+
             osc.type = 'sawtooth';
             osc.frequency.setValueAtTime(110, now);
             osc.frequency.linearRampToValueAtTime(260, now + 0.35);
             gain.gain.setValueAtTime(0.04, now);
             gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.4);
+
             osc.connect(gain);
             gain.connect(audioCtx.destination);
             osc.start(now);
             osc.stop(now + 0.4);
 
-            // رنة نقية
             setTimeout(() => {
                 const chime = audioCtx.createOscillator();
                 const chimeGain = audioCtx.createGain();
+
                 chime.type = 'sine';
                 chime.frequency.setValueAtTime(800, audioCtx.currentTime);
                 chimeGain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-                chimeGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.3);
+                chimeGain.gain.exponentialRampToValueAtTime(
+                    0.0001,
+                    audioCtx.currentTime + 0.3
+                );
+
                 chime.connect(chimeGain);
                 chimeGain.connect(audioCtx.destination);
                 chime.start();
                 chime.stop(audioCtx.currentTime + 0.3);
             }, 180);
-        } catch(e) {}
+        } catch (e) {}
     }
 
     function updateClock() {
-        const now = new Date();
-        document.getElementById('liveClock').textContent = now.toTimeString().split(' ')[0];
+        document.getElementById('liveClock').textContent =
+            new Date().toTimeString().split(' ')[0];
     }
+
     setInterval(updateClock, 1000);
     updateClock();
 
     function renderDOM() {
         const chassis = document.getElementById('deviceChassis');
         const controls = document.getElementById('controlsContainer');
+
         chassis.innerHTML = '';
         controls.innerHTML = '';
 
         for (let i = 1; i <= 6; i++) {
-            const code = i < 10 ? `0${i}` : `${i}`;
+            const code = `0${i}`;
 
             chassis.innerHTML += `
                 <div class="device-slot" id="slot-${i}">
@@ -514,7 +579,9 @@
                     </div>
                     <div class="mechanical-lid">
                         <span class="lid-ch-label">SERVO CH-${code}</span>
-                        <div class="lid-grip-ribs"><span></span><span></span><span></span></div>
+                        <div class="lid-grip-ribs">
+                            <span></span><span></span><span></span>
+                        </div>
                         <div>
                             <div class="lid-led-bar" id="led-${i}"></div>
                             <span class="lid-status-screen" id="st-${i}">---</span>
@@ -527,24 +594,29 @@
                 <article class="slot-card">
                     <div class="slot-card-header">
                         <span class="slot-tag">CH-${code}</span>
-                        <span style="font-size:13px; font-weight:700;" id="tag-${i}">---</span>
+                        <span style="font-size:13px;font-weight:700" id="tag-${i}">---</span>
                     </div>
+
                     <div class="input-row">
                         <label id="lbl-m-${i}">---</label>
                         <input type="text" id="name-${i}" placeholder="...">
                     </div>
+
                     <div class="input-row">
                         <label id="lbl-d-${i}">---</label>
                         <input type="text" id="dose-${i}" placeholder="...">
                     </div>
+
                     <div class="input-row">
                         <label id="lbl-t-${i}">---</label>
                         <input type="time" id="time-${i}">
                     </div>
+
                     <div class="button-strip">
                         <button class="btn-commit" onclick="saveData(${i})" id="btn-c-${i}">---</button>
                         <button class="btn-test" onclick="toggleLid(${i})" id="btn-t-${i}">---</button>
                     </div>
+
                     <div class="status-badge" id="badge-${i}">---</div>
                 </article>
             `;
@@ -554,17 +626,23 @@
     function applyLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('real_med_lang', lang);
+
         const t = i18n[lang];
 
         document.documentElement.setAttribute('lang', lang);
-        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute(
+            'dir',
+            lang === 'ar' ? 'rtl' : 'ltr'
+        );
 
         document.getElementById('txtTitle').textContent = t.title;
         document.getElementById('btnLang').textContent = t.btnLang;
 
         for (let i = 1; i <= 6; i++) {
-            const code = i < 10 ? `0${i}` : `${i}`;
-            document.getElementById(`tag-${i}`).textContent = `${t.slotTitle} ${code}`;
+            const code = `0${i}`;
+
+            document.getElementById(`tag-${i}`).textContent =
+                `${t.slotTitle} ${code}`;
             document.getElementById(`lbl-m-${i}`).textContent = t.lblMed;
             document.getElementById(`lbl-d-${i}`).textContent = t.lblDose;
             document.getElementById(`lbl-t-${i}`).textContent = t.lblTime;
@@ -603,22 +681,49 @@
         const t = i18n[currentLang];
 
         if (!name || !time) {
-            alert(t.alertMissing + (id < 10 ? `0${id}` : id));
+            alert(t.alertMissing + `0${id}`);
             return;
         }
 
-        playMechanicalSound();
-        const payload = { id, name, dose, time, timestamp: Date.now() };
-        localStorage.setItem(`med_real_${id}`, JSON.stringify(payload));
-        fetch(`http://192.168.1.54/api/set?slot=${id}&name=${encodeURIComponent(name)}&dose=${encodeURIComponent(dose)}&time=${encodeURIComponent(time)}`)
-  .then(r => r.json())
-  .then(data => {
-    if (!data.ok) alert("فشل إرسال الدواء");
-  })
-  .catch(() => alert("تعذر الاتصال بالبوكس"));
+        if (!medboxClient || !mqttConnected) {
+            alert("الموقع غير متصل بخادم MQTT. تحققي من إعدادات EMQX.");
+            return;
+        }
 
-        document.getElementById(`badge-${id}`).style.display = 'block';
-        refreshChassis();
+        const payload = {
+            slot: id,
+            name: name,
+            dose: dose,
+            time: time
+        };
+
+        medboxClient.publish(
+            MQTT_TOPIC,
+            JSON.stringify(payload),
+            { qos: 1 },
+            (error) => {
+                if (error) {
+                    alert("فشل إرسال بيانات الدواء.");
+                    console.error(error);
+                    return;
+                }
+
+                localStorage.setItem(
+                    `med_real_${id}`,
+                    JSON.stringify({
+                        id: id,
+                        name: name,
+                        dose: dose,
+                        time: time,
+                        timestamp: Date.now()
+                    })
+                );
+
+                document.getElementById(`badge-${id}`).style.display = 'block';
+                refreshChassis();
+                alert("تم إرسال بيانات الدواء إلى MQTT بنجاح!");
+            }
+        );
     }
 
     function refreshChassis() {
@@ -630,16 +735,21 @@
             const oled = document.getElementById(`oled-${i}`);
             const st = document.getElementById(`st-${i}`);
 
+            if (!slot || !oled || !st) continue;
+
             if (raw) {
                 const data = JSON.parse(raw);
+
                 slot.classList.add('has-med', 'active-armed');
                 oled.textContent = `${data.name} (${data.time})`;
+
                 if (!slot.classList.contains('open-lid')) {
                     st.textContent = `${t.lidArmed} • ${data.time}`;
                 }
             } else {
                 slot.classList.remove('has-med', 'active-armed');
                 oled.textContent = t.vacant;
+
                 if (!slot.classList.contains('open-lid')) {
                     st.textContent = t.lidClosed;
                 }
@@ -650,8 +760,10 @@
     function restoreData() {
         for (let i = 1; i <= 6; i++) {
             const raw = localStorage.getItem(`med_real_${i}`);
+
             if (raw) {
                 const data = JSON.parse(raw);
+
                 document.getElementById(`name-${i}`).value = data.name || '';
                 document.getElementById(`dose-${i}`).value = data.dose || '';
                 document.getElementById(`time-${i}`).value = data.time || '';
@@ -664,6 +776,7 @@
         renderDOM();
         applyLanguage(currentLang);
         restoreData();
+        connectMedBox();
     });
 </script>
 </body>
